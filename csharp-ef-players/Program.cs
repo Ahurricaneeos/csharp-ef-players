@@ -30,7 +30,7 @@ while (go)
                 int randomScore = random.Next(1, 10);
                 int randomNumberOfMatches = random.Next(1, 101);
                 int randomNumberOfVicories = random.Next(1, randomNumberOfMatches);
-                Player newPlayer = new Player { Name = playerName, Surname = playerSurname, PlayerMatch = randomNumberOfMatches, PlayerScore = randomScore, PlayerVictories = randomNumberOfVicories };
+                Player newPlayer = new Player(playerName, playerSurname, randomScore, randomNumberOfMatches, randomNumberOfVicories, team);
                 db.Add(newPlayer);
                 db.SaveChanges();
             }
